@@ -1,5 +1,5 @@
 function getAllNetflixVids() {
-  return document.querySelectorAll('.ptrack-content');
+	return document.querySelectorAll('.ptrack-content');
 }
 
 function getRandomItem(nodeList) {
