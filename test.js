@@ -1,20 +1,18 @@
-function getAllUrlsOnPage() {
-  return document.querySelectorAll('a.playLink');
+function getAllNetflixVids() {
+  return document.querySelectorAll('.ptrack-content');
 }
 
 function getRandomItem(nodeList) {
 	return nodeList[Math.floor(Math.random()*nodeList.length)];
 }
 
-var listOfUrls = getAllUrlsOnPage();
+var listOfVids = getAllNetflixVids();
 
-// var randomUrl = getRandomItem(listOfUrls);
+var selectedVid = getRandomItem(listOfVids);
 
-// window.location.href = randomUrl.href;
+var ui = selectedVid.dataset.uiTrackingContext;
 
-var a = document.querySelectorAll('.ptrack-content');
-var el = getRandomItem(a);
-var ui = el.dataset.uiTrackingContext;
+//Regex for the video ID:
 var re = /%22video_id%22:(\d*),/i;
 var watchURL = ui.match(re)[1];
 
